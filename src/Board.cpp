@@ -131,7 +131,7 @@ pY -> Vertical position in blocks
 */
 bool Board::IsFreeBlock(int pX, int pY)
 {
-	mBoard[pX][pY] == POS_FREE ? true : false;
+	return mBoard[pX][pY] == POS_FREE ? true : false;
 }
 
 // Find the pixels to print to on screen.
