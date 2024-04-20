@@ -222,3 +222,114 @@ const char mPieces[7 /* kind */][4 /* rotation */][5 /* horizontal blocks */][5 
 		}
 	}
 };
+
+// Initial Piece Displacement
+int mPiecesInitialPosition [7 /* kind */][4 /* rotation */][2 /* position */] =
+{
+	// Square
+	{
+		{-2, -3},
+		{-2, -3},
+		{-2, -3},
+		{-2, -3}
+	},
+	// I TODO: Check if only one row of blocks appear here
+	{
+		{-2, -2},
+		{-2, -3},
+		{-2, -2},
+		{-2, -3}
+	},
+	// L
+	{
+		{-2, -3},
+		{-2, -3},
+		{-2, -3},
+		{-2, -2}
+	},
+	// L Mirrored
+	{
+		{-2, -3},
+		{-2, -2},
+		{-2, -3},
+		{-2, -3}
+	},
+	// N
+	{
+		{-2, -3},
+		{-2, -3},
+		{-2, -3},
+		{-2, -2}
+	},
+	// N Mirrored
+	{
+		{-2, -3},
+		{-2, -3},
+		{-2, -3},
+		{-2, -2}
+	},
+	// T
+	{
+		{-2, -3},
+		{-2, -3},
+		{-2, -3},
+		{-2, -2}
+	},
+};						
+
+// Defined methods from Piece.h
+
+/*
+-----------------------------------------------------------------------------
+Return the type of a block (0 = no-block, 1 = normal block, 2 = pivot block)
+
+Parameters:
+
+pPiece -> Piece to draw
+pRotation -> 1 of the 4 possible rotations
+pX -> Horizontal position in blocks
+pY -> Vertical position in blocks
+
+-----------------------------------------------------------------------------
+*/
+
+int Pieces::GetBlockType (int pPiece, int pRotation, int pX, int pY)
+{
+	return mPieces[pPiece][pRotation][pX][pY];
+}
+
+/*
+-----------------------------------------------------------------------------
+Returns the horizontal displacement of the piece that has to be applied in
+order to create it in the correct position.
+
+Parameters:
+
+pPiece -> Piece to draw
+pRotation -> 1 of the 4 possible rotations
+
+-----------------------------------------------------------------------------
+*/
+
+int Pieces::GetXInitialPosition (int pPiece, int pRotation)
+{
+	return mPiecesInitialPosition[pPiece][pRotation][0];
+}
+
+/*
+-----------------------------------------------------------------------------
+Returns the vertical displacement of the piece that has to be applied in
+order to create it in the correct position.
+
+Parameters:
+
+pPiece -> Piece to draw
+pRotation -> 1 of the 4 possible rotations
+
+-----------------------------------------------------------------------------
+*/
+
+int Pieces::GetYInitialPosition(int pPiece, int pRotation)
+{
+	return mPiecesInitialPosition[pPiece][pRotation][1];
+}
