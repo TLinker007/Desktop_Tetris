@@ -31,5 +31,8 @@
     <ClInclude Include="include\Pieces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
