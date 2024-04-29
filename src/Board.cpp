@@ -67,11 +67,8 @@ bool Board::IsGameOver()
 		{
 			return true;
 		}
-		else
-		{
-			return false;
-		}
 	}
+	return false;
 }
 
 /*
