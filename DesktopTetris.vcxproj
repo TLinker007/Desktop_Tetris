@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Board.cpp" />
+    <ClCompile Include="src\IO.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Pieces.cpp" />
   </ItemGroup>
@@ -172,6 +173,7 @@
     <None Include=".gitignore" />
     <None Include="LICENSE" />
     <None Include="README.md" />
+    <None Include="SDL.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Board.h" />

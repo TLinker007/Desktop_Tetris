@@ -2,15 +2,15 @@
 #define _IO_
 
 #ifndef LINUX
-#include "SDL.h"
-//#include "SDL/SDL_GfxPrimitives/SDL_gfxPrimitives.h"
+#include "../../SDL/include/SDL.h"
+#include "../../SDL/SDL_GfxPrimitives/SDL_gfxPrimitives.h"
 #else
-#include <SDL.h>
-//#include "SDL/SDL_GfxPrimitives/SDL_gfxPrimitives.h"
+#include "../../SDL/include/SDL.h"
+#include "../../SDL/SDL_GfxPrimitives/SDL_gfxPrimitives.h"
 #endif // !LINUX
 
-#pragma comment (lib, "../../SDL2/lib/SDL.lib")
-//#pragma comment (lib, "SDL/SDL_GfxPrimitives/SDL_GfxPrimitives_Static.lib")
+#pragma comment (lib, "../../../SDL/lib/SDL.lib")
+#pragma comment (lib, "../../../SDL/SDL_GfxPrimitives/SDL_GfxPrimitives_Static.lib")
 
 // Colors.
 enum color {BLACK, RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE, COLOR_MAX};
@@ -22,6 +22,7 @@ public:
 	IO();
 
 	void DrawRectangle(int pX1, int pY1, int pX2, int pY2, enum color pC);
+	void boxColor(SDL_Surface* screen, int pX1, int pY1, int pX2, int pY2, Uint32 color);
 	void ClearScreen();
 	int GetScreenHeight();
 	int InitGraph();
