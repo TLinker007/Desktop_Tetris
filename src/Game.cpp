@@ -2,6 +2,21 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+// Initialization.
+Game::Game(Board* pBoard, Pieces* pPieces, IO* pIO, int pScreenHeight)
+{
+	mScreenHeight = pScreenHeight;
+
+	// Get the pointer to the Board and Pieces classes.
+	mBoard = pBoard;
+	mPieces = pPieces;
+	mIO = pIO;
+
+	//Game Initialization.
+	InitGame();
+}
+
 /*
 ------------------------------------------------------
 Get a random int between two integers.
