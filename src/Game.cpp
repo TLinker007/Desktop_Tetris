@@ -1,7 +1,4 @@
 #include "..\include\Game.h"
-#include <stdlib.h>
-#include <time.h>
-
 
 // Initialization.
 Game::Game(Board* pBoard, Pieces* pPieces, IO* pIO, int pScreenHeight)
@@ -106,11 +103,11 @@ void Game::DrawPiece(int pX, int pY, int pPiece, int pRotation)
 	{
 		for (int j = 0; j < PIECE_BLOCKS; j++)
 		{
-			// Get the type of the block and raw it with the correct color.
+			// Get the type of the block and draw it with the correct color.
 			switch (mPieces->GetBlockType(pPiece, pRotation, j, i))
 			{
 				case 1:
-					// For each block of the peice except the pivot.
+					// For each block of the piece except the pivot.
 					mColor = GREEN;
 					break;
 				case 2:
@@ -142,7 +139,7 @@ void Game::DrawBoard()
 {
 	// Caclulate the limits of the board in pixels.
 	int mX1 = BOARD_POSITION - (BLOCK_SIZE * (BOARD_WIDTH / 2)) - 1;
-	int mX2 = BOARD_POSITION - (BLOCK_SIZE * (BOARD_WIDTH / 2));
+	int mX2 = BOARD_POSITION + (BLOCK_SIZE * (BOARD_WIDTH / 2));
 	int mY = mScreenHeight - (BLOCK_SIZE * BOARD_HEIGHT);
 
 	// Check that the vertical margins are not too small.

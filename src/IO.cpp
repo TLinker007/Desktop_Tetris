@@ -2,8 +2,8 @@
 
 // Setting class global variables
 static SDL_Surface* mScreen;
-static Uint32 mColors[COLOR_MAX] = { 0x000000ff, 0xff0000ff, 0x00ff00ff, 0x0000ffff,
-									0x00ffffff, 0xff00ffff, 0xffff00ff, 0xffffffff };
+static Uint32 mColors[COLOR_MAX] = {0x000000ff, 0xff0000ff, 0x00ff00ff, 0x0000ffff,
+									0x00ffffff, 0xff00ffff, 0xffff00ff, 0xffffffff};
 
 // Initialization.
 IO::IO()
@@ -32,12 +32,12 @@ void IO::DrawRectangle(int pX1, int pY1, int pX2, int pY2, enum color pC)
 	boxColor(mScreen, pX1, pY1, pX2, pY2 - 1, mColors[pC]);
 }
 
-// Draws the box color.
-void IO::boxColor(SDL_Surface* mScreen, int pX1, int pY1, int pX2, int pY2, Uint32 color)
-{
-	SDL_Rect rect{ pX1, pY1, pX2 - pX1, pY2 - pY2 };
-	SDL_FillRect(mScreen, &rect, color);
-}
+//// Draws the box color.
+//void IO::boxColor(SDL_Surface* mScreen, int pX1, int pY1, int pX2, int pY2, Uint32 color)
+//{
+//	SDL_Rect rect{ pX1, pY1, pX2 - pX1, pY2 - pY2 };
+//	SDL_FillRect(mScreen, &rect, color);
+//}
 
 // Return the screen height
 int IO::GetScreenHeight()
@@ -92,7 +92,7 @@ int IO::Getkey()
 // KeyBoard Input
 int IO::IsKeyDown(int pKey)
 {
-	const Uint8* mKeytable;
+	Uint8* mKeytable;
 	int mNumKeys;
 	SDL_PumpEvents();
 	mKeytable = SDL_GetKeyState(&mNumKeys);
@@ -117,7 +117,7 @@ int IO::InitGraph()
 	info = SDL_GetVideoInfo();
 	if (info->vfmt->BitsPerPixel > 8)
 	{
-		video_bpp = info->vfmt->BytesPerPixel;
+		video_bpp = info->vfmt->BitsPerPixel;
 	}
 	else
 	{

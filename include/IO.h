@@ -22,7 +22,7 @@ public:
 	IO();
 
 	void DrawRectangle(int pX1, int pY1, int pX2, int pY2, enum color pC);
-	void boxColor(SDL_Surface* screen, int pX1, int pY1, int pX2, int pY2, Uint32 color);
+	//void boxColor(SDL_Surface* screen, int pX1, int pY1, int pX2, int pY2, Uint32 color);
 	void ClearScreen();
 	int GetScreenHeight();
 	int InitGraph();
